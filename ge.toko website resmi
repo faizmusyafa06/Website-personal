@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ge.toko</title>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fff; /* Putih bersih */
+      color: #000; /* Hitam */
+      overflow-x: hidden;
+    }
+
+    /* Container Utama */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5%;
+      position: relative;
+      height: 100vh;
+    }
+
+    /* Kotakan Latar Belakang */
+    .background-box {
+      position: absolute;
+      top: 10%;
+      left: 5%;
+      width: 90%;
+      height: 85%;
+      background: #f0f0f0; /* Abu-abu terang */
+      border: 2px solid #000; /* Hitam */
+      border-radius: 15px;
+      z-index: 0;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Konten Utama */
+    .left-content {
+      position: relative;
+      z-index: 1;
+      max-width: 50%;
+      margin-left: 20%; /* Menggeser ke kanan */
+    }
+
+    .left-content h1 {
+      font-size: 3rem; /* Judul diperbesar */
+      margin-bottom: 15px;
+      line-height: 1.5; /* Memberi jarak antar baris */
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .left-content button {
+      padding: 15px 30px;
+      background: #000; /* Hitam */
+      color: #fff; /* Putih */
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      animation: bounce 1.6s infinite;
+    }
+
+    .left-content button:hover {
+      background: #555; /* Abu-abu gelap */
+      transform: scale(1.1);
+    }
+
+    /* Gambar di kanan */
+    .right-content img {
+      max-width: 40%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: slideIn 1.5s ease-in-out forwards;
+    }
+
+    /* Bagian Foto */
+    .photo-section {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .photo-section img {
+      width: calc(20% - 10px); /* Diperkecil */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+      cursor: pointer;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .photo-section img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Watermark */
+    .watermark {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      color: #888; /* Abu-abu */
+      text-align: center;
+      opacity: 0.8;
+    }
+
+    /* Halaman Kedua */
+    .page2 {
+      display: none;
+      height: 100vh;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .page2 h1 {
+      margin-bottom: 30px;
+      color: #000;
+    }
+
+    .page2 .box {
+      display: flex;
+      gap: 20px;
+    }
+
+    .page2 .box-item {
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 250px;
+    }
+
+    .page2 .box-item button {
+      background: #000;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .page2 .box-item button:hover {
+      background: #555;
+    }
+
+    /* Animasi */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Halaman Utama -->
+  <div id="page1" class="container">
+    <div class="background-box"></div>
+    <div class="left-content">
+      <h1>Ingin Hari Ibumu<br>Jadi Spesial?<br>Beri Buket Cantik<br>dari ge.toko!</h1>
+      <button onclick="navigateToPage2()">Beli Sekarang</button>
+    </div>
+    <div class="right-content">
+      <img src="download.jpg" alt="Buket Cantik">
+    </div>
+  </div>
+
+  <div class="photo-section">
+    <img src="download.jpg" alt="Buket 1" onclick="navigateToPage2()">
+    <img src="download.jpg" alt="Buket 2" onclick="navigateToPage2()">
+    <img src="download.jpg" alt="Buket 3" onclick="navigateToPage2()">
+    <img src="download.jpg" alt="Buket 4" onclick="navigateToPage2()">
+    <img src="download.jpg" alt="Buket 5" onclick="navigateToPage2()">
+    <img src="download.jpg" alt="Buket 6" onclick="navigateToPage2()">
+    <img src="download.jpg" alt="Buket 7" onclick="navigateToPage2()">
+    <img src="download.jpg" alt="Buket 8" onclick="navigateToPage2()">
+    <img src="download.jpg" alt="Buket 9" onclick="navigateToPage2()">
+    <img src="download.jpg" alt="Buket 10" onclick="navigateToPage2()">
+  </div>
+
+  <!-- Halaman Kedua -->
+  <div id="page2" class="page2">
+    <h1>Mau order lewat apa?</h1>
+    <div class="box">
+      <div class="box-item">
+        <p>Lewat DM di IG</p>
+        <button onclick="window.location.href='https://www.instagram.com/ge.toko'">DM Sekarang</button>
+      </div>
+      <div class="box-item">
+        <p>Lewat Nomor WhatsApp</p>
+        <button onclick="window.location.href='https://wa.me/6289526844283'">Chat Sekarang</button>
+      </div>
+    </div>
+    <div class="watermark">Design by paizmsy</div>
+  </div>
+
+  <script>
+    const page1 = document.getElementById('page1');
+    const page2 = document.getElementById('page2');
+
+    function smoothScroll(target) {
+      const startPosition = window.pageYOffset;
+      const targetPosition = target.offsetTop;
+      const distance = targetPosition - startPosition;
+      const duration = 1500; // Durasi lebih lama
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOut(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      function easeInOut(t, b, c, d) {
+        let x = t / (d / 2);
+        if (x < 1) return c / 2 * x * x + b;
+        x--;
+        return -c / 2 * (x * (x - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    function navigateToPage2() {
+      page2.style.display = 'flex';
+      smoothScroll(page2);
+    }
+  </script>
+</body>
+</html>
